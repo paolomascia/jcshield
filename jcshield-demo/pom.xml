@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>jcshield</groupId>
+	<artifactId>jcshield-demo</artifactId>
+	<version>1.0</version>
+	<packaging>jar</packaging>
+	<name>jcshield-demo</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+	</properties>
+
+	<build>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifestEntries>
+							<Main-Class>jcshield.Demo</Main-Class>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>cryptoclass.plugin</groupId>
+				<artifactId>cryptoclass-mvn-plugin</artifactId>
+			</plugin>				
+		</plugins>
+		
+		<pluginManagement>
+			<plugins>
+				<plugin>
+				    <groupId>cryptoclass.plugin</groupId>
+				    <artifactId>cryptoclass-mvn-plugin</artifactId>
+				    <version>1.0-SNAPSHOT</version>
+				    <configuration>				    	
+				    	<classdir>${project.build.outputDirectory}</classdir>
+					    <classes>
+						  <param>jcshield.Demo</param>
+						</classes>
+						<secretkey>000102030405060708090A0B0C0D0E0F</secretkey>
+					</configuration>	     
+				    <executions>
+				      <execution>
+				        <id>default-encryption</id>
+				        <phase>compile</phase>
+				        <goals>
+				          <goal>encrypt</goal>
+				        </goals>
+				      </execution>
+				    </executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		
+	</build>
+
+</project>

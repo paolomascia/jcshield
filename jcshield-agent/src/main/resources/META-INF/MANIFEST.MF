@@ -1,0 +1,4 @@
+Agent-Class: jcshield.agent.CryptoAgent
+Can-Redefine-Classes: true
+Can-Retransform-Classes: true
+Premain-Class:  jcshield.agent.CryptoAgent
