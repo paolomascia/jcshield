@@ -32,49 +32,49 @@ Step 1. Compile the maven plugin.
 
 Step 2. To use the plugin add the folling code in the build section of your project pom file:
 
-	<build>
-			........
+<build>
+	........
 
-			<plugins>
-				<plugin>
-					<groupId>cryptoclass.plugin</groupId>
-					<artifactId>cryptoclass-mvn-plugin</artifactId>
-				</plugin>			
-			</plugins>
+	<plugins>
+		<plugin>
+			<groupId>cryptoclass.plugin</groupId>
+			<artifactId>cryptoclass-mvn-plugin</artifactId>
+		</plugin>			
+	</plugins>
 
 
-			<pluginManagement>
-				<plugins>
+	<pluginManagement>
+		<plugins>
 
-					....
-					<plugin>
-							<groupId>cryptoclass.plugin</groupId>
-							<artifactId>cryptoclass-mvn-plugin</artifactId>
-							<version>1.0-SNAPSHOT</version>
-							<configuration>				    	
-								<classdir>${project.build.outputDirectory}</classdir>
-								<classes>
-								<param></param>
-							</classes>
-							<secretkey>000102030405060708090A0B0C0D0E</secretkey>
-						</configuration>	     
-							<executions>
-								<execution>
-									<id>default-encryption</id>
-									<phase>compile</phase>
-									<goals>
-										<goal>encrypt</goal>
-									</goals>
-								</execution>
-							</executions>
-					</plugin>
+			....
+			<plugin>
+				<groupId>cryptoclass.plugin</groupId>
+				<artifactId>cryptoclass-mvn-plugin</artifactId>
+				<version>1.0-SNAPSHOT</version>
+					<configuration>				    	
+						<classdir>${project.build.outputDirectory}</classdir>
+						<classes>
+						<param></param>
+					</classes>
+					<secretkey>000102030405060708090A0B0C0D0E</secretkey>
+				</configuration>	     
+				<executions>
+					<execution>
+						<id>default-encryption</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>encrypt</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 
-					.....
+			.....
 
-				</plugins>
-			</pluginManagement>
+		</plugins>
+	</pluginManagement>
 
-	</build>
+</build>
 
 The secretkey attribute contains the 128 bits AES key in the format of 16 hexadecimal numbers.
 
