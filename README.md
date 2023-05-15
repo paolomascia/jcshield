@@ -32,7 +32,8 @@ Step 1. Compile the maven plugin.
 
 Step 2. To use the plugin add the folling code in the build section of your project pom file:
 
-<build>
+	
+	<build>
 	........
 
 	<plugins>
@@ -74,7 +75,7 @@ Step 2. To use the plugin add the folling code in the build section of your proj
 		</plugins>
 	</pluginManagement>
 
-</build>
+	</build>
 
 The secretkey attribute contains the 128 bits AES key in the format of 16 hexadecimal numbers.
 
